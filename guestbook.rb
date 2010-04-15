@@ -56,3 +56,6 @@ post '/' do
   shout = Shout.create(:name => params[:name],:message => params[:message])
   redirect '/'
 end
+
+get'admin'do
+end
