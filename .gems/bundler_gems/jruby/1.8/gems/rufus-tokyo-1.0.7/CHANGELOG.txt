@@ -1,0 +1,186 @@
+
+= rufus-tokyo CHANGELOG.txt
+
+
+== rufus-tokyo - 1.0.7    released 2010/02/10
+
+- gh #30 : removed hard dependency on ffi so that JRuby installs stop failing.
+
+
+== rufus-tokyo - 1.0.6    released 2010/02/01
+
+- gh #29 : segfault when getdup(unknown_key). Fixed, thanks Dmitry
+
+
+== rufus-tokyo - 1.0.5    released 2010/01/06
+
+- todo  : now using getconf to determine INT_MIN (thanks oklahoma_mixer)
+- bug   : issue with ree and lib.free(pointer), switching to tcfree
+
+
+== rufus-tokyo - 1.0.4    released 2009/12/25
+
+- bug   : memory leak, gotten values not freed
+- todo  : Rufus::Tokyo::Tyrant and TyrantTable now reconnects (120 seconds)
+
+
+== rufus-tokyo - 1.0.3    released 2009/11/16
+
+- bug   : newer versions of FFI have [undocumented] bool type. Adapted.
+
+
+== rufus-tokyo - 1.0.2    released 2009/11/01
+
+- bug   : HashMethods#to_a not working right with Ruby 1.9.1. Fixed.
+- bug   : REE problem with libXXXopen, had to switch from == 1 to != 0
+- todo  : added #counter_value to Cabinet/Tyrant
+- todo  : added default_proc / default value to Cabinet/Tyrant (not tables).
+- todo  : Table#delete_keys_with_prefix now using qry#searchout.
+- todo  : cleaned up 'no transactions for Tyrant [table]' code.
+- todo  : db#ldelete(k0, k1, ...) now OK.
+- todo  : minimal warnings when running with -w
+- todo  : db#mget(k0, k1, ...) now OK.
+- added : class level open() for Table classes and Dystopia
+- bug   : the primary key is not stringified by get() for Table or TyrantTable
+- bug   : keys() crashes for Rufus::Edo::Cabinet.new('*.tcb')
+- bug   : keys() without :prefix returns duplicate keys for b-tree database
+          (Edo or Tokyo) due to iteration, while the underlying C code or even
+          calls with :prefix do not
+- bug   : specifying tuning parameters causes Rufus::Edo::Cabinet.new('*.tcf')
+          to raise an exception
+- bug   : keys() and each() don't work fixed-width database, due to fwmkeys()
+          not being supported (Edo and Tokyo)
+- added : can set built-in or custom comparison functions for b-tree databases
+          (Edo interface only)
+- todo  : reenabled #copy for Tyrant (Edo and Tokyo)
+- added : query_count() to match query_delete() for tables (Edo and Tokyo)
+- todo  : made iteration faster in most cases
+
+
+== rufus-tokyo - 1.0.1    released 2009/09/18
+
+- todo      : add #putcat to Cabinet / Tyrant (Edo and Tokyo)
+- todo      : implemented search/union/intersection/difference for tables
+- todo      : added #putdup and #get4 to Cabinet (Edo and Tokyo)
+- todo      : better dylib 'detection' (Pietro Ferrari)
+- todo      : aliased lget to mget (thanks Runa)
+- todo      : proper Abort exception (Kenneth Kalmer)
+
+
+== rufus-tokyo - 1.0.0    released 2009/07/23
+
+- todo      : merged in Jeremy Hinegardner's Dystopia work
+- issue #13 : to_s for keys and values (thanks Elise and Ilya)
+- todo      : added full-text search ops :ftsphrase, :ftsex, :ftsor and :ftsand
+- todo      : added inverted index types, :token, :qgram, :opt
+- todo      : dropped 'backward compability' TC[/TT] 1.4.28+ ftw
+
+
+== rufus-tokyo - 0.1.14    released 2009/06/30
+
+- issue #2 : query#add with no_index=false by default
+- issue #1 : added query#delete and table#query_delete
+
+
+== rufus-tokyo - 0.1.13    released 2009/06/02
+
+- todo  : putkeep implementation (by Kamal)
+- todo  : support for binary data (map, list, cabinet, table, tokyo/edo)
+- todo  : added #defrag to Rufus::Tokyo::Cabinet
+- todo  : added :dfunit to databases that support it
+- todo  : added #addint and #adddouble (#incr)
+
+
+== rufus-tokyo - 0.1.12    released 2009/04/07
+
+- todo  : added ext method for calling embedded Lua function (Tyrant)
+- todo  : added transaction support for Rufus::Tokyo::Cabinet
+- todo  : mimicking query.count in rufus/edo
+- todo  : implemented query.count (TC 1.4.12 and TT 1.1.20 only) rufus/tokyo
+
+
+== rufus-tokyo - 0.1.11    released 2009/03/25
+
+- todo  : autodetecting /usr/lib/libtokyocabinet.so and
+          /usr/lib/libtokyotyrant.so (thanks mebaran)
+
+
+== rufus-tokyo - 0.1.10    released 2009/03/19
+
+- bug   : had to adapt to TC 1.4.10 and TT 1.1.17 new "setlimit"
+
+
+== rufus-tokyo - 0.1.9    released 2009/02/27
+
+- bug   : sudo gem install rufus-tokyo was failing because of
+          lib/tokyotyrant.rb. Fixed.
+
+
+== rufus-tokyo - 0.1.8    released 2009/02/27
+
+- added : support for Hirabayashi-san 'native' Ruby classes via Rufus::Edo
+- todo  : implemented #delete_keys_with_prefix (naive impl for tables)
+- added : lget/ldelete and merge! to Rufus::Tokyo::Cabinet and ::Tyrant
+
+
+== rufus-tokyo - 0.1.7    released 2009/02/19
+
+- todo  : Rufus::Tokyo::Cabinet.new('filename', :type => :hash) now OK (Zev)
+- todo  : more documentation for Rufus::Tokyo::Cabinet#new
+- added : Rufus::Tokyo::Cabinet has a open method that takes a block like
+          File.open (Zev)
+- todo  : aligned Rufus::Tokyo::Table#new on ::Cabinet#new
+- todo  : added opts (:prefix, :limit, :native) to Rufus::Tokyo::Cabinet#keys,
+          Rufus::Tokyo::Table#keys and the corresponding Tyrant classes
+
+
+== rufus-tokyo - 0.1.6    released 2009/02/16
+
+- todo : Tyrant and TyrantTable now complain when used in lieu of each other
+- todo : implemented Tyrant and TyrantTable #stat
+- todo : made tran begin/abort/commit directly available (framework builders)
+- todo : implemented Rufus::Tokyo::Table#transaction
+- bug  : JRuby support back in
+- todo : implemented Rufus::Tokyo::Map#[] (class method)
+- todo : simplified Table and TyrantTable #[]=
+- bug  : preventing table#[]= from segfaulting on bad input (Justin)
+
+
+== rufus-tokyo - 0.1.5    released 2009/02/13
+
+- todo : implemented set_index (cabinet / tyrant tables)
+- todo : namespace simplification (Justin)
+- todo : implemented Rufus::Tokyo::TyrantTable
+- todo : implemented Rufus::Tokyo::Tyrant
+- todo : moved tests to bacon (spec/)
+
+
+== rufus-tokyo - 0.1.4    released 2009/02/02
+
+- todo #23780 : hmethods for Rufus::Tokyo::Table
+
+
+== rufus-tokyo - 0.1.3    released 2009/01/29
+
+- todo : implemented Rufus::Tokyo::Table (and query)
+- todo : implemented Rufus::Tokyo::List
+- todo : implemented Rufus::Tokyo::Map
+- todo : implemented Cabinet#compact_copy
+- todo : implemented Cabinet#copy
+
+
+== rufus-tokyo - 0.1.2    released 2009/01/23
+
+- todo : implemented Cabinet#keys and #values
+
+
+== rufus-tokyo - 0.1.1    released 2009/01/23
+
+- bug  : fixed dependency, it's ffi not ruby-ffi
+- todo : implemented Cabinet#clear
+
+
+== rufus-tokyo - 0.1.0    released 2009/01/23
+
+- initial release
+

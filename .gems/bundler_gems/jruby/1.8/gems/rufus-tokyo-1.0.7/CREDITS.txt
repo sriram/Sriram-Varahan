@@ -1,0 +1,46 @@
+
+= CREDITS.txt rufus-tokyo gem
+
+
+== authors
+
+John Mettraux  http://jmettraux.wordpress.com
+James Edward Gray II  http://blog.grayproductions.net/
+Zev Blut  http://www.iknow.co.jp/users/zev
+Jeremy Hinegardner  http://www.copiousfreetime.org/
+
+
+== contributors
+
+Arun Thampi  http://github.com/arunthampi
+Pietro Ferrari  http://github.com/pietroferrari
+Kenneth Kalmer  http://www.opensourcery.co.za/
+Adam Keys  http://github.com/therealadam
+Marcos Piccinini  http://github.com/nofxx
+Matthew King  http://github.com/automatthew
+Kamal Fariz Mahyuddin  http://github.com/kamal
+Justin Reagor  http://blog.kineticweb.com/
+Benjamin Yu  http://github.com/byu
+Mark 'mebaran'  http://github.com/mebaran
+
+
+== feedback / support
+
+Anthony Buck - hard dependency on ffi for JRuby
+Dmitry A. Ustalov  http://github.com/eveel
+Aaron Zhang  free/tcfree issue
+Swerling  http://github.com/swerling
+Alexandre Gravem
+Philippe Monnet  http://blog.monnet-usa.com/
+Ilya Grigorik  http://igvita.com
+Elise Huard  http://blog.elisehuard.be/
+
+
+== finally
+
+many thanks to the author of Tokyo Cabinet (Mikio Hirabayashi) and 
+the authors of ruby-ffi
+
+  http://tokyocabinet.sourceforge.net
+  http://kenai.com/projects/ruby-ffi
+
