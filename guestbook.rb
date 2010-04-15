@@ -57,5 +57,4 @@ post '/' do
   redirect '/'
 end
 
-get'admin'do
-end
+
