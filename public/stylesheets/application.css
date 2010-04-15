@@ -1,0 +1,113 @@
+/* @group Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+}
+
+body {
+	background: #000;
+	color: #7f7f7f;
+	font: 62.5% "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+/* Menu */
+body {
+    font-family:georgia;
+    font-size:14px;
+}
+
+a {
+    text-decoration:none;
+    color:#333;
+    outline:0;
+}
+
+img {
+    outline:0;
+    border:0;
+}
+
+#menu {
+    /* you must set it to relative, so that you can use absolute position for children elements */
+    position:relative;
+    text-align:center;
+    width:583px;
+    height:40px;
+}
+
+#menu ul {
+    /* remove the list style and spaces*/
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:inline;
+
+    /* position absolute so that z-index can be defined */
+    position:absolute;
+
+    /* center the menu, depend on the width of you menu*/
+    left:110px;
+    top:0;
+
+}
+
+#menu ul li {
+
+    /* give some spaces between the list items */
+    margin:0 5px;
+
+    /* display the list item in single row */
+    float:left;
+}
+
+#menu #box {
+
+    /* position absolute so that z-index can be defined and able to move this item using javascript */
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:200;
+
+    /* image of the right rounded corner */
+    background:url(/images/tail.gif) no-repeat right center;
+    height:35px;
+
+
+    /* add padding 8px so that the tail would appear */
+    padding-right:8px;
+
+    /* set the box position manually */
+    margin-left:5px;
+
+}
+
+#menu #box .head {
+    /* image of the left rounded corner */
+    background:url(/images/head.gif) no-repeat 0 0;
+    height:35px;
+    color:#eee;
+
+    /* force text display in one line */
+    white-space:nowrap;
+
+    /* set the text position manually */
+    padding-left:8px;
+    padding-top:12px;
+}
+
+
+

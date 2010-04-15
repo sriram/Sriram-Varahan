@@ -1,0 +1,11 @@
+.two-posts .post
+{ height:280px;}
+
+.post 
+{ background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/post.png', sizingMethod='scale'); }
+
+#navigation 
+{ background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/nav.png', sizingMethod='image'); }
+
+.field 
+{ background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='css/images/post.png', sizingMethod='scale'); }

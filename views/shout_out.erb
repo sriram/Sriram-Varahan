@@ -1,0 +1,19 @@
+<body style="font-family: sans-serif;">
+    <h1>Shoutout!</h1>
+    <a href="/aboutme">About Me</a>
+
+    <form method=post>
+      Your Name <input type="text" size="22" name="name">
+      Message.....: <input type="text" size="22" name="message">
+      <input type=submit value=Shout>
+    </form>
+
+    <hr style="color:#555576" size="1" width="200px">
+
+    <% @shouts.each do |shout| %>
+        <p><%=h shout.name%> wrote: <q><%=h shout.message %></q></p>
+    <% end %>
+
+    <div style="position: absolute; bottom: 40px; right: 20px;">
+    <img src="/images/teampic.jpg" height="420px" width="500px"></div>
+</body>
